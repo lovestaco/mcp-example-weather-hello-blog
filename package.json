@@ -1,0 +1,31 @@
+{
+	"name": "mcp-tools",
+	"type": "module",
+	"dependencies": {
+		"@modelcontextprotocol/sdk": "^1.4.0",
+		"zod": "^3.24.1"
+	},
+	"devDependencies": {
+		"@types/node": "^22.10.0",
+		"@vitest/coverage-v8": "^3.0.7",
+		"onchange": "^7.1.0",
+		"typescript": "^5.7.3",
+		"vite-tsconfig-paths": "^5.1.4",
+		"vitest": "^3.0.7"
+	},
+	"scripts": {
+		"build": "pnpm build:all",
+		"build:all": "pnpm build:hello && pnpm build:weather && pnpm build:blog",
+		"build:hello": "mkdir -p bin && bun build src/hello.ts --compile --minify --sourcemap --outfile bin/mcp-hello",
+		"build:weather": "mkdir -p bin && bun build src/weather.ts --compile --minify --sourcemap --outfile bin/mcp-weather",
+		"build:blog": "mkdir -p bin && bun build src/blog.ts --compile --minify --sourcemap --outfile bin/mcp-blog",		
+		"watch:hello": "onchange 'src/hello.ts' -- pnpm build:hello",
+		"watch:weather": "onchange 'src/weather.ts' -- pnpm build:weather",
+		"watch:blog": "onchange 'src/blog.ts' -- pnpm build:blog",
+		"watch:rules": "onchange 'src/rules.ts' -- pnpm build:rules",
+		"watch:all": "onchange 'src/*.ts' -- pnpm build:all",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"test:coverage": "vitest run --coverage"
+	}
+}

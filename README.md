@@ -117,6 +117,8 @@ Alternatively, you can run the TypeScript files directly with Node:
 /path/to/node ~/path/to/project/src/index.ts
 ```
 
+![cursorAdd.png](exampleOutputs/cursorAdd.png)
+
 ## Testing
 
 ```bash
@@ -130,4 +132,10 @@ pnpm test:watch
 pnpm test:coverage
 ```
 
-# mcp-example-weather-hello-blog
+## Output
+
+![output1.png](exampleOutputs/output1.png)
+
+![output2.png](exampleOutputs/output2.png)
+
+![output3.png](exampleOutputs/output3.png)
